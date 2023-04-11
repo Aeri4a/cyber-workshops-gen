@@ -62,7 +62,7 @@ class App(ctk.CTk):
         self.charNumberValue = ctk.CTkLabel(self.containerUpLeft, textvariable=self.chars, font=self.fontSmall)
         self.charNumberValue.grid(row=2, column=1)
 
-        self.charNumberSlider = ctk.CTkSlider(self.containerUpLeft, from_=1, to=30, number_of_steps=30, variable=tk.IntVar(value=8), command=self.change_slider)
+        self.charNumberSlider = ctk.CTkSlider(self.containerUpLeft, from_=3, to=30, number_of_steps=30, variable=tk.IntVar(value=8), command=self.change_slider)
         self.charNumberSlider.grid(row=3, column=1)
 
         #GEN BUTTON
@@ -77,8 +77,9 @@ class App(ctk.CTk):
 
 
         #INFO BOX
-        self.info = ctk.CTkLabel(self.containerDown, text="Info")
-        self.info.grid(sticky="we", padx=10, pady=10)
+        self.info = tk.StringVar(value="")
+        self.infoBox = ctk.CTkLabel(self.containerDown, textvariable=self.info)
+        self.infoBox.grid(sticky="we", padx=10, pady=10)
 
 
     def character_limit(self):
