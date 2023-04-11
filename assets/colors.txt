@@ -1,0 +1,2 @@
+first: #11dbae
+second: #10c099
